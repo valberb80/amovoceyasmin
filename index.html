@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Eu Amo Você ❤️</title>
+
+  <style>
+  
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body{
+      height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      overflow:hidden;
+      background:#000;
+      position:relative;
+	 ::-webkit-scrollbar{
+      width:10px;
+    }
+
+    ::-webkit-scrollbar-track{
+      background:#111;
+    }
+
+    ::-webkit-scrollbar-thumb{
+      background:white;
+      border-radius:20px;
+    }
+    /* =========================================
+       FOTO DE FUNDO
+       TROQUE "fundo.jpg" PELA SUA FOTO
+    ========================================== */
+
+    .background{
+      position:absolute;
+      width:100%;
+      height:100%;
+      background:url('fundo.jpg') center center;
+      background-size:cover;
+      opacity:0.25; /* deixa apagado */
+      filter:blur(1px);
+      z-index:-2;
+    }
+
+    /* camada escura */
+    .overlay{
+      position:absolute;
+      width:100%;
+      height:100%;
+      background:rgba(0,0,0,0.45);
+      z-index:-1;
+    }
+
+    .container{
+      width:90%;
+      max-width:420px;
+      display:flex;
+      flex-direction:column;
+      gap:25px;
+      align-items:center;
+    }
+
+    /* =========================================
+       ÁREA DO VÍDEO
+    ========================================== */
+
+    .video-box{
+      width:100%;
+      height:300px;
+      border:5px solid white;
+      border-radius:25px;
+      overflow:hidden;
+      box-shadow:0 0 20px rgba(255,255,255,0.4);
+      background:#111;
+    }
+
+    .video-box video{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    /* =========================================
+       TEXTO
+    ========================================== */
+
+    .text-box{
+      width:100%;
+      padding:25px;
+      border-radius:25px;
+      backdrop-filter:blur(8px);
+      background:rgba(255,255,255,0.08);
+      border:2px solid rgba(255,255,255,0.2);
+      color:white;
+      text-align:center;
+      box-shadow:0 0 15px rgba(255,255,255,0.15);
+    }
+
+    .title{
+      font-size:32px;
+      margin-bottom:20px;
+      font-weight:bold;
+      text-shadow:0 0 10px rgba(255,255,255,0.5);
+    }
+
+    .message{
+      font-size:18px;
+      line-height:1.8;
+      color:#f1f1f1;
+    }
+
+    /* coração flutuando */
+
+    .heart{
+      position:absolute;
+      color:white;
+      font-size:25px;
+      animation:float 6s linear infinite;
+      opacity:0.5;
+    }
+
+    @keyframes float{
+      0%{
+        transform:translateY(100vh);
+        opacity:0;
+      }
+
+      20%{
+        opacity:0.5;
+      }
+
+      100%{
+        transform:translateY(-120px);
+        opacity:0;
+      }
+    }
+  }
+  </style>
+</head>
+<body>
+
+  <!-- FOTO DE FUNDO -->
+  <div class="background"></div>
+
+  <!-- ESCURECER FUNDO -->
+  <div class="overlay"></div>
+
+  <!-- CORAÇÕES -->
+  <div class="heart" style="left:10%; animation-delay:0s;">❤️</div>
+  <div class="heart" style="left:30%; animation-delay:2s;">❤️</div>
+  <div class="heart" style="left:50%; animation-delay:4s;">❤️</div>
+  <div class="heart" style="left:70%; animation-delay:1s;">❤️</div>
+  <div class="heart" style="left:90%; animation-delay:3s;">❤️</div>
+
+  <div class="container">
+
+    <!-- =====================================
+         VÍDEO
+         TROQUE "video.mp4" PELO SEU VÍDEO
+    ====================================== -->
+
+    <div class="video-box">
+
+      <video autoplay muted loop controls>
+        <source src="amor.mp4" type="video/mp4">
+      </video>
+
+    </div>
+
+    <!-- TEXTO -->
+
+    <div class="text-box">
+
+      <div class="title">
+       <h4> Eu Amo Você ❤️</h4>
+      </div>
+
+      <div class="message">
+
+       Meu amor, quero que você saiba...
+        <br>
+
+         <h5>Que a minha vida sem você não é nada. Estou disposto a aprender, errar e melhorar como ser humano por você; a viver e até morrer por você, se fosse preciso.
+
+Quero sempre estar ao seu lado, em todos os momentos, porque sem você minha vida se torna um vazio, como algo perdido no escuro e no frio.
+
+Saiba que você é a razão de eu acordar todos os dias com um sorriso no rosto, apenas por pensar em você. Eu te amo de todo o meu coração.
+
+E não vou dizer que você é a minha vida, porque nós somos muito maiores do que isso. Comparar tudo o que eu sinto por você a algo tão pequeno seria insignificante diante da imensidão do amor que eu tenho por você e da pessoa incrível que você é.
+
+I love you.</h5>
+ ❤️
+
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>
