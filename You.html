@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Galeria de Vídeos</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    /* FOTO DE FUNDO */
+    background-image:url("casamento.png");
+
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+
+    padding:40px 15px;
+
+    overflow-y:auto;
+
+    font-family:Arial, sans-serif;
+}
+
+/* CONTAINER */
+
+.container{
+
+    width:100%;
+    max-width:1000px;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+    gap:40px;
+}
+
+/* ÁREA DOS VÍDEOS */
+
+.video-box{
+
+    width:100%;
+    max-width:900px;
+
+    background:rgba(255,255,255,0.10);
+
+    backdrop-filter:blur(8px);
+
+    border-radius:25px;
+
+    padding:15px;
+
+    box-shadow:0 0 20px rgba(0,0,0,0.3);
+}
+
+/* VÍDEOS */
+
+video{
+
+    width:100%;
+    display:block;
+
+    border-radius:20px;
+}
+
+/* TEXTO INDICATIVO */
+
+.legenda{
+
+    text-align:center;
+
+    margin-top:10px;
+
+    color:white;
+
+    font-size:18px;
+
+    font-weight:bold;
+}
+
+/* CORAÇÕES */
+
+.heart{
+    position:fixed;
+    bottom:-50px;
+    pointer-events:none;
+
+    animation:subir linear forwards;
+}
+
+@keyframes subir{
+
+    0%{
+        transform:translateY(0) scale(0.5);
+        opacity:0;
+    }
+
+    20%{
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(-120vh) scale(1.5);
+        opacity:0;
+    }
+}
+
+/* SCROLL */
+
+::-webkit-scrollbar{
+    width:12px;
+}
+
+::-webkit-scrollbar-track{
+    background:rgba(255,255,255,0.2);
+}
+
+::-webkit-scrollbar-thumb{
+    background:#ff4f8b;
+    border-radius:20px;
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- VÍDEO 1 -->
+    <div class="video-box">
+        <video controls>
+            <source src="video1.mp4" type="video/mp4">
+        </video>
+        <div class="legenda">
+            VÍDEO 1
+        </div>
+    </div>
+
+    <!-- VÍDEO 2 -->
+    <div class="video-box">
+        <video controls>
+            <source src="video2.mp4" type="video/mp4">
+        </video>
+        <div class="legenda">
+            VÍDEO 2
+        </div>
+    </div>
+
+    <!-- VÍDEO 3 -->
+    <div class="video-box">
+        <video controls>
+            <source src="video3.mp4" type="video/mp4">
+        </video>
+        <div class="legenda">
+            VÍDEO 3
+        </div>
+    </div>
+
+    <!-- VÍDEO 4 -->
+    <div class="video-box">
+        <video controls>
+            <source src="video4.mp4" type="video/mp4">
+        </video>
+        <div class="legenda">
+            VÍDEO 4
+        </div>
+    </div>
+
+</div>
+
+<script>
+
+function criarCoracao(){
+
+    const coracao = document.createElement("div");
+
+    coracao.classList.add("heart");
+
+    coracao.innerHTML = "❤️";
+
+    coracao.style.left =
+        Math.random() * 100 + "vw";
+
+    coracao.style.fontSize =
+        (20 + Math.random() * 30) + "px";
+
+    coracao.style.animationDuration =
+        (4 + Math.random() * 5) + "s";
+
+    document.body.appendChild(coracao);
+
+    setTimeout(() => {
+        coracao.remove();
+    }, 9000);
+}
+
+setInterval(criarCoracao, 350);
+
+</script>
+
+</body>
+</html>

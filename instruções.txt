@@ -1,3 +1,9 @@
 git add .
 git commit -m .
 git push
+
+
+dentro de head
+
+<link rel="stylesheet" href="style.css">
+

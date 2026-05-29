@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Página de Texto</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    /* FOTO DE FUNDO */
+    background-image:url("rosa.jpg");
+
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:50px 20px;
+
+    overflow-y:auto;
+}
+
+/* QUADRO DO TEXTO */
+
+.caixa-texto{
+
+    width:90%;
+    max-width:900px;
+
+    background:rgba(255,255,255,0.88);
+
+    backdrop-filter:blur(5px);
+
+    border-radius:25px;
+
+    padding:50px;
+
+    box-shadow:0 0 30px rgba(0,0,0,0.3);
+
+}
+
+/* TÍTULO */
+
+h1{
+
+    text-align:center;
+
+    font-family:'Dancing Script', cursive;
+
+    font-size:55px;
+
+    margin-bottom:30px;
+
+    color:#ff3d7f;
+
+}
+
+/* TEXTO */
+
+.texto{
+
+    font-size:24px;
+
+    line-height:1.9;
+
+    color:#333;
+
+    text-align:justify;
+
+    white-space:pre-line;
+}
+
+/* CORAÇÕES */
+
+.heart{
+    position:fixed;
+    bottom:-50px;
+    font-size:25px;
+    animation:subir linear forwards;
+    pointer-events:none;
+}
+
+@keyframes subir{
+
+    0%{
+        transform:translateY(0) scale(0.5);
+        opacity:0;
+    }
+
+    20%{
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(-110vh) scale(1.4);
+        opacity:0;
+    }
+}
+
+/* BARRA DE ROLAGEM */
+
+::-webkit-scrollbar{
+    width:12px;
+}
+
+::-webkit-scrollbar-track{
+    background:rgba(255,255,255,0.2);
+}
+
+::-webkit-scrollbar-thumb{
+    background:#ffffff  ;
+    border-radius:20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="caixa-texto">
+
+ <div class="audio-box">
+
+        <div class="audio-text">
+            🎵 Nossa Música
+        </div>
+
+        <!-- TROQUE musica.mp3 PELO SEU ÁUDIO -->
+
+        <audio controls autoplay loop>
+            <source src="oceano.mp3" type="audio/mpeg">
+            Seu navegador não suporta áudio.
+        </audio>
+
+    </div>
+
+
+    <!-- TÍTULO -->
+    <h1>
+        29/05/2026
+    </h1>
+
+    <!-- TEXTO -->
+    <div class="texto">
+
+Meu amor, estou aqui para lhe agradecer por todo esse tempo ao meu lado, por tudo o que você fez por mim e por todos os momentos que você viveu comigo. Eu guardo tudo isso no meu coração. O que eu mais tenho para te dizer é: eu te amo.
+
+O meu amor por você não dá para expressar, nem mesmo explicar. Meu amor por você é tão grande que eu não consigo nem mesmo pensar. Já fizemos dois anos de namoro. Nunca achei que chegaria até aqui. Sei que esse tempo não é nada comparado com tudo o que ainda iremos viver.
+
+Se você souber o que eu quero com você, vai perceber que esses dois anos são apenas um pedacinho do que eu penso para nós. Obrigado por ser essa mulher incrível. Eu espero que o nosso futuro seja outro nível, inesquecível.
+
+Eu te amo, eu te desejo, e saiba que o meu amor por você nunca vai acabar. Nunca pense que alguém poderia ser melhor para mim do que você. Porque não só eu quero você na minha vida, como o Senhor lá em cima também. E, se Ele colocou você no meu destino, é porque tem que ser você.
+
+Eu penso do mesmo jeito: se não for você, não vai ser mais ninguém. Você está predestinada a ser minha namorada, minha noiva, minha amiga, minha esposa e a mulher da minha vida.
+
+Feliz dois anos de namoro, meu amor. ❤️
+
+    </div>
+
+</div>
+
+<script>
+
+function criarCoracao(){
+
+    const coracao = document.createElement("div");
+
+    coracao.classList.add("heart");
+
+    coracao.innerHTML = "❤️";
+
+    coracao.style.left = Math.random() * 100 + "vw";
+
+    coracao.style.fontSize =
+        (20 + Math.random() * 30) + "px";
+
+    coracao.style.animationDuration =
+        (4 + Math.random() * 4) + "s";
+
+    document.body.appendChild(coracao);
+
+    setTimeout(() => {
+        coracao.remove();
+    }, 8000);
+
+}
+
+setInterval(criarCoracao, 400);
+
+</script>
+
+</body>
+</html>
